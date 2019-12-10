@@ -1,0 +1,57 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>核心能力</title>
+<title>heder_nav-menu</title>
+	{{include 'default/public/link'}}
+<link rel="stylesheet" type="text/css" href="default/css/successful_case.css"/>
+<link rel="stylesheet" type="text/css" href="default/css/bootstrap.min.css"/>
+</head>
+
+<body>
+{{include  'default/public/header'}}
+<div id="header_nav-wrapper" class="text-center">
+	<img class="header_nav_img" src="/default/images/header_nav-menu/competence_bg.jpg">
+	<div class="header_nav_new">
+		<div class="animated fadeInDown" data-animation="fadeInDown" data-timeout="400">Technological innovation is our life.</div>
+		<h3 class="animated fadeInUp" data-animation="fadeInUp" data-timeout="400"><span>技术创新，是我们的生命。</span></h3>
+	</div>
+
+</div>
+
+
+
+<div id="main_wrapper_core">
+
+    
+    <div class="main_core">
+		<span class=" revealOnScroll title font-align" data-animation="fadeInDown">核心能力</span>
+	    <ul class="clear">
+	    	{{each corelist}}
+		    <li class="revealOnScroll" data-animation="fadeInLeft"  style="width:100%" style="margin-bottom: 1px"  data-timeout="{{$index+2}}00"  >
+				<img src="{{$value.img_url}}" class="{{if $index == 1}}fr{{else}}fl{{/if}} img"/>
+				<h2 class="{{if $index == 1}}fl{{else}}fr{{/if}}">{{$value.keywords}}</h2>
+				<br>{{$value.description}}<br>
+				<a href="/list/compet_list/{{@$value._id}}">
+					<span class="{{if $index == 1}}fl{{else}}fr{{/if}} more font-align">VIEW MORE  →</span>
+				</a>
+		    </li>
+			{{/each}}
+	    </ul>
+    </div>
+
+
+
+
+</div>
+{{include  'default/public/footer'}}
+
+</body>
+<script>
+	$(function(){
+		revealOnScroll();
+		srcoll_height();
+	})
+</script>
+</html>

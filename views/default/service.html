@@ -1,0 +1,65 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>尊享服务</title>
+    {{include 'default/public/link'}}
+<link rel="stylesheet" type="text/css" href="/default/css/service.css"/>
+</head>
+
+<body>
+
+{{include  'default/public/header'}}
+<div id="header_nav-wrapper" class="text-center">
+    <img class="header_nav_img" src="/default/images/header_nav-menu/service_bg.jpg">
+    <div class="header_nav_new">
+        <div class="revealOnScroll" data-animation="fadeInDown">The heart to the customer to write a satisfactory answer</div>
+        <h3 class="revealOnScroll" data-animation="fadeInUp"><span>用心给客户书写出一次次满意的答卷</span></h3>
+    </div>
+
+
+
+</div>
+
+
+
+<div id="main-wrapper">
+
+    <div class="main" >
+    
+    		<ul class="clear">
+				{{if list!=""}}
+				{{each list}}
+				<li class="service revealOnScroll" data-animation="zoomIn"  data-timeout="{{$value.sort}}00">
+					<img src="{{$value.img_url}}" style="width:120px;height:108px"/>
+
+					<span class="title2 text-center font-black">{{$value.title}}</span>
+					<span class="des_title">{{$value.description}}</span>
+					<a href="/list/service_list/{{@$value._id}}">
+					<span class="more text-center">VIEW MORE  →</span>
+					</a>
+				</li>
+				{{/each}}
+				{{else}}
+
+				{{/if}}
+                                
+			</ul>
+    
+    </div>
+    
+
+
+
+</div>
+{{include  'default/public/footer'}}
+
+
+</body>
+<script>
+    $(function(){
+		revealOnScroll();
+        srcoll_height();
+    })
+</script>
+</html>

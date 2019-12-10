@@ -1,0 +1,90 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>成功案例</title>
+	{{include 'default/public/link'}}
+<link rel="stylesheet" type="text/css" href="default/css/successful_case.css"/>
+<link rel="stylesheet" type="text/css" href="default/css/bootstrap.min.css"/>
+</head>
+
+<body>
+{{include  'default/public/header'}}
+<div id="header_nav-wrapper" class="text-center">
+    <img class="header_nav_img" src="/default/images/header_nav-menu/case_bg.jpg">
+    <div class="header_nav_new">
+        <div class="animated fadeInDown" data-animation="fadeInDown">Profession is the guarantee of success of the project</div>
+    	<h3 class="animated fadeInUp" data-animation="fadeInUp"><span>专业 是项目成功的保障</span></h3>
+    </div>
+</div>
+
+<div id="header_title-wrapper">
+
+    <div class="header_title clear">
+		<ul class="menu">
+		{{each caselist_id}}
+        <li {{if pid !=undefined && pid== $value._id }} class="active_case" {{/if}}>
+        		<a href="/case?pid={{@$value._id}}">{{$value.title}}</a>
+        </li>
+		{{/each}}
+		</ul>
+        <input id="pid_case" type="hidden" value="{{pid}}">
+    </div>
+
+</div>
+
+
+<div id="main_wrapper">
+
+    
+    <div class="case_main revealOnScroll"  data-animation="fadeInUp" >
+	    <ul class="clear" style="text-align: center">
+			{{each caselist}}
+		    <li>
+		    	<div class="p_hover">
+		    		<a href="/list/content_list/{{@$value._id}}"><img src="{{$value.img_url}}" /></a>
+
+					<p class="case_p"><a href="/list/content_list/{{@$value._id}}">{{$value.title}}</a></p>
+				</div>
+		    	
+		    	
+		    </li>
+			{{/each}}
+
+	    </ul>
+
+        <div id="page" class="pagination page_style" ></div>
+    </div>
+
+
+
+</div>
+
+{{include  'default/public/footer'}}
+</body>
+<script src="/default/js/jqPaginator.js"></script>
+<script>
+    $(function(){
+		revealOnScroll();
+		srcoll_height();
+        $('#page').jqPaginator({
+            totalPages: {{totalPages}},
+        visiblePages: 6,
+            currentPage: {{page}},
+        onPageChange: function(num, type) {
+            console.log(num, type);
+//
+            if(type=='change'){
+                debugger;
+                var pid_case=$("#pid_case").val();
+                if(pid_case) {
+                    location.href = "/case?pid="+pid_case+"&page=" + num;
+                }else {
+                    location.href = "/case?page=" + num;
+                }
+            }
+        }
+        })
+    })
+	</script>
+</html>

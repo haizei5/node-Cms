@@ -1,0 +1,67 @@
+@charset "utf-8";
+/* CSS Document */
+
+#main_wrapper{ background:#f4f4f4;overflow: hidden;width:100%}
+#main_wrapper-compet{ overflow: hidden;width:100%;padding-top: 60px;padding-bottom: 50px}
+.main{ width:1140px; margin:0 auto; padding:60px 0 102px 0; }
+.case_main{ width:1140px; margin:0 auto; padding:60px 0 65px 0;overflow: hidden }
+.main li {float:left;width: 360px;height: 256px;margin-right: 10px;margin-bottom: 30px;margin-left: 10px;}
+
+.main li p{line-height: 2;width: 100%;padding: 5px 0px;display: block;font-size: 18px;}
+
+
+.main li img{ display:block; width:360px; height:256px;}
+
+.case_main .clear li {float:left;width: 360px;height: 305px;margin-right: 10px;margin-bottom: 33px;margin-left: 10px;}
+.case_main .clear li p a:hover{text-decoration: none;}
+.case_main .clear li:hover{background: url(../images/icon05.png) no-repeat top center;background-size:360px 256px;}
+.case_main .clear li img{ display:block; width:360px; height:256px;z-index: -999;top: -292px;}
+.case_main .clear li img:hover{ display:block; width:360px; height:256px;top: -292px;opacity: 0.1;}
+.content{padding: 50px;width: 1050px;line-height: 2;margin: 0 auto;background: #fff;border-radius: 16px;box-shadow: 0px 0px 12px #d9d7d7fa;}
+/*.content:hover{box-shadow: 0px 0px 12px #413f3ffa;}*/
+
+.content .title{text-align: center;}
+
+.main_news{ width:1140px; margin:0 auto; padding:60px 0 102px 0; }
+.main_news .clear li{float:left;width: 360px;height: 314px;margin-right: 10px;margin-bottom: 1px;margin-left: 10px;}
+
+
+#main_wrapper_core{ background:#f4f4f4;}
+.main_core{width:1140px; margin:0 auto;padding-top: 56px;}
+.main_core ul{margin-bottom: 0!important;padding-bottom: 80px}
+.main_core li{width: 1070px;height:488px;border-radius: 16px;background-color: #fff;margin-bottom: 30px;padding: 60px;margin-left: 5px;font-size: 17px;line-height: 36px;margin: 5px auto}
+.main_core li:hover{box-shadow: 0px 0px 12px #999;}
+.main_core .img{width: 583px;height: 370px;margin-right: 40px;}
+.main_core h2{font-size: 28px;width: 382px;padding-left: 63px;line-height: 44px;margin-top: 17px;margin-bottom: 17px;}
+.main_core .more{width: 154px;line-height: 51px;height: 51px;background-color: #f9f9f9;border: 1px solid #cccccc;display: block;font-size: 12px;margin-top: 46px}
+.main_core .more:hover{background: url(../images/button_bluebg.png) no-repeat top center;color:#fff}
+.fr{float: right}
+.fl{float: left}
+.font-align{text-align: center}
+.title{display: block;font-size: 22px;font-weight: bold;padding-bottom: 23px;background: url(../images/index/blue_line.jpg) no-repeat center bottom;margin-bottom: 60px;}
+
+#main_wrapper_list{padding-bottom: 70px;padding-top: 60px}
+.content_list{width: 1200px;margin: 0 auto;background: #fff;overflow: hidden}
+.content_list .left{width:280px;display: block}
+.content_list .title{font-size: 22px;font-weight: bold;padding-bottom: 21px;background: url(../images/index/blue_line.jpg) no-repeat bottom;display: block;margin-bottom: 30px}
+.content_list .right{width: 870px;display: block}
+.left .leftcd li{width: 100%;font-size: 15px;color: #666;margin-bottom: 19px;}
+.left .leftcd li:hover{color:#1d99ff}
+.left .leftcd .li_active{color:#1d99ff!important;}
+.case_perv_list {width: 45%;margin-top: 50px;margin-bottom: 30px;font-size: 17px;padding-left: 40px;background: url(../images/successful_case/arrow3.png) no-repeat left center;overflow: hidden;white-space: nowrap;text-overflow: ellipsis;}
+.case_next_list {width: 45%;margin-top: 50px;margin-bottom: 30px;font-size: 17px;padding-right: 40px;background: url(../images/successful_case/arrow4.png) no-repeat right center;overflow: hidden;white-space: nowrap;text-overflow: ellipsis;}
+.content_list a{color:#666}
+.content_list a:hover{color:#1d99ff}
+
+#main_wrapper_service_list{padding-bottom: 40px;padding-top: 60px}
+.compet_tab{height: 88px;background: url(../images/header_nav-menu/compet_cd.jpg) no-repeat  top center;}
+.wrapper{width:1200px;margin:0 auto;overflow: hidden}
+.margin_left{padding-left:0 }
+.list{width:33%}
+.margin_left a{line-height: 88px;font-size: 36px;font-weight: bold;color: #bcc1f8;display: block;padding-right: 25px;padding-left: 22px;width: auto;}
+.margin_left a:hover{color: #fff;}
+.a_bg{color:#fff!important; background:url(../images/header_nav-menu/arrow2.png) center bottom no-repeat; display:block;}
+#header_compet-wrapper{height:414px!important;position: relative!important;
+    z-index: -999!important;
+    overflow: hidden!important;}
+header_compet-wrapper

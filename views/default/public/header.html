@@ -1,0 +1,16 @@
+<div id="header-wrapper" class=" clearfix navi">
+    <div class="header-inner">
+        <div class="logo">
+            <img src="{{setting.site_logo}}" style="width: 329px;height:278px;margin-top:-87px">
+        </div>
+        <div class="nav">
+            <ul class="clear">
+                {{each nav}}
+                <li>
+                    <a href="{{$value.url}}" {{if path==$value.url}} class="active" {{/if}}> {{$value.title}} </a>
+                </li>
+                {{/each}}
+            </ul>
+        </div>
+    </div>
+</div>

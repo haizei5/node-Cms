@@ -1,0 +1,93 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>新闻资讯</title>
+<title>heder_nav-menu</title>
+	{{include 'default/public/link'}}
+<link rel="stylesheet" type="text/css" href="default/css/successful_case.css"/>
+<link rel="stylesheet" type="text/css" href="default/css/bootstrap.min.css"/>
+</head>
+
+<body>
+{{include  'default/public/header'}}
+<div id="header_nav-wrapper" class="text-center">
+	<img class="header_nav_img" src="/default/images/header_nav-menu/news_bg.jpg">
+	<div class="header_nav_new">
+		<div class="animated fadeInDown" data-animation="fadeInDown" data-timeout="400">We've been waiting for you here</div>
+		<h3 class="animated fadeInUp" data-animation="fadeInUp" data-timeout="400"><span>我们一直在这里等你</span></h3>
+	</div>
+
+
+
+</div>
+
+<div id="header_title-wrapper">
+
+	<div class="header_title clear">
+		<ul class="menu">
+			{{each newslist_id}}
+			<li {{if pid !=undefined && pid== $value._id }} class="active_case" {{/if}}>
+			<a href="/news?pid={{@$value._id}}">{{$value.title}}</a>
+			</li>
+			{{/each}}
+		</ul>
+		<input id="pid_news" type="hidden" value="{{pid}}">
+	</div>
+
+
+</div>
+
+
+<div id="main_wrapper">
+
+    
+    <div class="main_news">
+	    <ul class="clear">
+	    	{{each newslist}}
+		    <li class="revealOnScroll" data-animation="fadeInLeft"  style="width:100%" style="margin-bottom: 1px"  data-timeout="{{$index+2}}00"  >
+		    		<a href="/list/content_list/{{@$value._id}}">
+						<span class="news_span">
+						<img src="{{$value.img_url}}" />
+						<span class="title_news">{{$value.title}}</span>
+						<span class="time">时间：{{$value.add_time | dateFormat}}</span>
+						</span>
+					</a>
+		    </li>
+			{{/each}}
+	    </ul>
+		<div id="page" class="pagination page_style" ></div>
+    </div>
+
+
+
+
+</div>
+{{include  'default/public/footer'}}
+
+</body>
+<script src="/default/js/jqPaginator.js"></script>
+<script>
+	$(function(){
+		revealOnScroll();
+		srcoll_height();
+		$('#page').jqPaginator({
+			totalPages: {{totalPages}},
+		visiblePages: 6,
+				currentPage: {{page}},
+		onPageChange: function(num, type) {
+			console.log(num, type);
+//
+			if(type=='change'){
+				var pid_news=$("#pid_news").val();
+				if(pid_news) {
+					location.href = "/news?pid="+pid_news+"&page=" + num;
+				}else {
+					location.href = "/news?page=" + num;
+				}
+			}
+		}
+	})
+	})
+</script>
+</html>

@@ -1,0 +1,62 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>{{list.title}}</title>
+    <meta name="Keywords" content="{{list.keywords}}" />
+    <meta name="Description" content="{{list.description}}" />
+    {{include 'default/public/link'}}
+    <link rel="stylesheet" type="text/css" href="/default/css/successful_case.css"/>
+</head>
+
+<body>
+
+
+{{include 'default/public/header.html'}}
+
+<div id="header_nav-wrapper">
+    <img class="header_nav_img" src="/default/images/header_nav-menu/content.jpg">
+    <div class="header_nav_new">
+        <div class="animated fadeInDown" data-animation="fadeInDown" style="font-size: 25px">"New" information, truth-seeking innovation</div>
+        <h3 class="animated fadeInUp" data-animation="fadeInUp" style="font-size: 25px"><span>"新"资讯，求实创新</span></h3>
+    </div>
+
+
+
+</div>
+
+
+<div id="main_wrapper_list">
+
+    <div class="content_list">
+        <span class="fl left revealOnScroll" data-animation="fadeInLeft" data-timeout="400">
+            {{if caselist !=""}}
+            <a href="{{type_address}}"><span class="title text-center">{{list.catename}}</span>
+            <ul class="leftcd text-center">
+                {{each caselist}}
+                <a href="/list/ind_list/{{@$value._id}}">
+                    <li {{if list.title == $value.title}} class="li_active" {{/if}}>
+                    ▪  {{$value.title}}
+                    </li>
+                </a>
+                {{/each}}
+            </ul>
+            {{/if}}
+        </span>
+        <span class="fr right revealOnScroll" data-animation="fadeInRight" data-timeout="400">
+    	    {{@list.content}}
+        </span>
+    </div>
+
+
+</div>
+
+{{include  'default/public/footer'}}
+</body>
+<script>
+    $(function(){
+        revealOnScroll();
+        srcoll_height();
+    })
+</script>
+</html>

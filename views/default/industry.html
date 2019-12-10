@@ -1,0 +1,72 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>行业详情</title>
+    {{include 'default/public/link'}}
+    <link rel="stylesheet" type="text/css" href="/default/css/industry.css"/>
+</head>
+
+<body>
+
+{{include  'default/public/header'}}
+<div id="header_nav-wrapper" class="text-center">
+    <img class="header_nav_img" src="/default/images/header_nav-menu/ind_header.jpg">
+    <div class="header_nav_new">
+        <div class="revealOnScroll" data-animation="fadeInDown">The heart to the customer to write a satisfactory answer</div>
+        <h3 class="revealOnScroll" data-animation="fadeInUp"><span>用心给客户书写出一次次满意的答卷</span></h3>
+    </div>
+
+
+
+</div>
+
+
+
+<div id="main-wrapper_ind">
+
+    <div class="main" >
+        <div class="wrapper">
+            <span class="hy_title text-center revealOnScroll" data-animation="fadeInDown">行业</span>
+            <ul class="hy_ul text-center">
+                {{if nd_list!=""}}
+                {{each nd_list}}
+                <a href="/list/ind_list/{{@$value._id}}">
+                    {{if $index=='0' || $index=='1' || $index=='2' || $index=='3'}}
+                    <li class="fl revealOnScroll" data-animation="fadeInLeft">
+                        {{else if $index=='4' || $index=='5' || $index=='6' || $index=='7'}}
+                    <li class="fl revealOnScroll" data-animation="fadeInRight" data-timeout="400">
+                        {{else if $index=='8' || $index=='9' || $index=='10' || $index=='11'}}
+                    <li class="fl revealOnScroll" data-animation="fadeInLeft" data-timeout="800">
+                        {{/if}}
+                        <img src="{{$value.img_url}}"/>
+                        <br>
+                        <span class="title_li">{{$value.title}}</span>
+                        {{$value.description}}
+                    </li>
+                </a>
+                {{/each}}
+                {{else}}
+
+                {{/if}}
+
+            </ul>
+        </div>
+
+    </div>
+
+
+
+
+</div>
+{{include  'default/public/footer'}}
+
+
+</body>
+<script>
+    $(function(){
+        revealOnScroll();
+        srcoll_height();
+    })
+</script>
+</html>

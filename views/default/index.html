@@ -1,0 +1,274 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>{{setting.site_title}}</title>
+    <meta name="Keywords" content="{{setting.site_keywords}}" />
+    <meta name="Description" content="{{setting.site_description}}" />
+    <link rel="icon" href="/favicon.ico" type="image/x-icon" />
+    {{include 'default/public/link'}}
+	<link rel="stylesheet" type="text/css" href="default/css/index.css" />
+	<link rel="stylesheet" type="text/css" href="default/css/swiper.min.css" />
+	<script type="text/javascript" src="default/js/swiper.min.js">
+	</script>
+	
+</head>
+<body>
+<!--导航-->
+{{include  'default/public/header'}}
+<!--轮播图-->
+<div id="banner-wrapper" class="text-center">
+    	
+        	        	
+  <div class="swiper-container" id="focus_head">
+    <div class="swiper-wrapper">
+        {{each focus}}
+      <div class="swiper-slide" id="focus_id{{$value.sort}}">
+          <a href="{{$value.focus_link}}">
+      	    <img src="{{$value.focus_img}}" alt="{{$value.title}}"  style="width:1519px;height:715px"/>
+          <div class="banner-span">
+              <p id="title{{$value.sort}}" data-animation="fadeInDown" style="font-weight: bolder;font-size: 48px">{{$value.title}}</p>
+              <div id="title_der{{$value.sort}}" data-animation="fadeInUp">
+                  <p>{{$value.title_der}}</p>
+              </div>
+          </div>
+          </a>
+      </div>
+        {{/each}}
+
+    </div>
+     <div class="swiper-pagination"></div>
+     
+     <div class="swiper-button-prev swiper-button-white"></div>
+     <div class="swiper-button-next swiper-button-white"></div>
+     
+  </div>
+ 
+    
+</div>
+<div id="main">
+    <!--各项数据展示-->
+    <div id="main_title-wrapper">
+            <div class="title_logo">
+                <ul>
+                    <li class="fl revealOnScroll" data-animation="zoomIn" data-timeout="400">
+                        <span class="title">1000+</span>
+                        <br>
+                        <span class="font-gray">企业客户信赖之选</span>
+                    </li>
+                    <li class="fl bg_02 revealOnScroll" data-animation="zoomIn" data-timeout="500">
+                        <span class="title">206个</span>
+                        <br>
+                        <span class="font-gray">开发项目</span>
+                    </li>
+                    <li class="fl bg_03 revealOnScroll" data-animation="zoomIn" data-timeout="700">
+                        <span class=" title">10678275个</span>
+                        <br>
+                        <span class="font-gray">项目累计下载量</span>
+                    </li>
+                    <li class="fl bg_04 revealOnScroll" data-animation="zoomIn" data-timeout="600">
+                        <span class="title">100%</span>
+                        <br>
+                        <span class="font-gray">客户满意度</span>
+                    </li>
+                </ul>
+            </div>
+            <div class="title_clear"></div>
+        </div>
+    <!--解决方案-->
+    <div id="main_top-wrapper">
+        <div class="main_bottom">
+            <div class="main_bottom-nav revealOnScroll clear" id="main_title_center" data-animation="fadeInDown" data-timeout="400">
+                <span class="title fl" >原创方案 The original plan</span>
+                <h3>始终以建设温馨、和谐的家园、提升你的居家生活品味为己任。</h3>
+                <div style=" clear:both;margin-bottom: 20px"></div>
+            </div>
+            <div class="main_bottom-table revealOnScroll" id="main_ul_center" data-animation="fadeInUp" data-timeout="400">
+                <ul  class="clear">
+                    {{each plan}}
+                    <li>
+                        <div class="p_hover">
+                            <a href="/list/solve_list/{{@$value._id}}"><img src="{{$value.img_url}}" alt="&nbsp;"/></a>
+                            <p class="case_p"><a href="/list/solve_list/{{@$value._id}}">{{$value.title}}</a></p>
+                        </div>
+                    </li>
+                    {{/each}}
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!--核心能力-->
+    <div id="main_center-wrapper">
+               <div class="main_center">
+                   <div class="main_bottom-nav revealOnScroll clear" id="main_title_top" data-animation="fadeInDown" data-timeout="400">
+                       <span class="title fl" >核心能力 Core competence </span>
+                       <h3>始终以建设温馨、和谐的家园、提升你的居家生活品味为己任。</h3>
+                   </div>
+                   <div class="sun2 revealOnScroll" data-animation="fadeInUp" data-timeout="400">
+                        <div class="ntab">
+                            <div class="TabTitle">
+                       <ul style="text-align: center">
+                           {{each core}}
+                           <li class="Tab_active" onmouseover='nTabs(this,{{$index}})'>
+                                <img src="/default/images/service/icon0{{$index+6}}.png" />
+                                <span class="span_f1">{{$value.title}}</span>
+                                <br>
+                                <span class="span_f2">{{$value.keywords}}</span>
+                           </li>
+                           {{/each}}
+                       </ul>
+                   </div>
+                            <div class="Tabcontent">
+                       {{each core}}
+                       <div id="myTab1_Content{{$index}}"  class="xxtab revealOnScroll {{if $index != 0}} none {{/if}}"  data-animation="fadeInLeft" >
+                           <img src="{{$value.img_url}}" class="img"/>
+                           <span class="txt fr">
+                                {{$value.description}}
+                                <a href="/list/compet_list/{{@$value._id}}">
+                                    <span class="button_txt fr">VIEW MORE  →</span>
+                                </a>
+                           </span>
+                       </div>
+                       {{/each}}
+                   </div>
+                        </div>
+                   </div>
+               </div>
+        </div>
+    <!--友情链接-->
+    <div id="main_bottom-wrapper">
+            <div class="main_bottom_ul">
+                <div class="main_bottom-nav clear revealOnScroll" id="main_title_bottom" data-animation="fadeInDown" data-timeout="400">
+                    <span class="title fl">友情链接</span>
+                    <div style=" clear:both;"></div>
+            </div>
+            <div class="main_bottom-table revealOnScroll" id="main_ul_bottom" data-animation="fadeInUp" data-timeout="400">
+                <ul  class="clear">
+                    {{each link}}
+                    <a href="{{$value.link}}"><li class="text-center"><img src="{{$value.link_img}}" alt="&nbsp;"title="{{$value.title}}"/></li></a>
+                    {{/each}}
+                    <div style=" clear:both;"></div>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!--行业-->
+    <div id="main_hy-wrapper">
+            <div class="main_bottom_hy">
+                <span class="hy_title fl revealOnScroll" data-animation="fadeInLeft" data-timeout="500">行业</span>
+                <a href="/industry"><span class="fr more text-center revealOnScroll" data-animation="fadeInRight" data-timeout="500">READ MORE  →</span></a>
+                <div style="clear: both"></div>
+                <ul class="text-center">
+                    {{each ind}}
+                    {{if $index!='4' && $index!='5'}}
+                    <a href="/list/ind_list/{{@$value._id}}">
+                    <li class="fl revealOnScroll " data-animation="zoomIn" data-timeout="{{$index+1}}00">
+                        <img src="{{$value.img_url}}" style="width:95px"/>
+                        <br>
+                        <span class="title_li">{{$value.title}}</span>
+                        <h2>{{$value.description}}</h2>
+                    </li>
+                    </a>
+                    {{/if}}
+                    {{/each}}
+                </ul>
+            </div>
+        </div>
+    <!--新闻资讯-->
+    <div id="main_news-wrapper">
+        <div class="main_bottom_news">
+            <span class="hy_title fl revealOnScroll" data-animation="fadeInLeft" data-timeout="500">新闻资讯</span>
+            <a href="/news"><span class="fr more text-center revealOnScroll" data-animation="fadeInRight" data-timeout="500">READ MORE  →</span></a>
+            <div style="clear: both"></div>
+            <ul class="text-center">
+                {{each news}}
+                {{if $index!='4' && $index!='5' && $index!='3'}}
+                <a href="/list/content_list/{{@$value._id}}">
+                    <li class="fl revealOnScroll " data-animation="fadeInUp" data-timeout="{{$index+1}}00">
+                        <img src="{{$value.img_url}}"/>
+                        <br>
+                        <span class="title_li">{{$value.title}}</span>
+                    </li>
+                </a>
+                {{/if}}
+                {{/each}}
+            </ul>
+        </div>
+    </div>
+</div>
+
+        
+  <script>
+    var mySwiper = new Swiper('.swiper-container',{
+    	  autoplay:true,
+          loop:true,
+		  pagination: {
+		    el: '.swiper-pagination',
+		  },
+		   navigation: {
+		    nextEl: '.swiper-button-next',
+		    prevEl: '.swiper-button-prev',
+		  }
+		
+	})
+  </script>
+<!--版权信息-->
+{{include  'default/public/footer'}}
+</body>
+<script>
+    function nTabs(obj,n){
+        $(obj).siblings().removeClass("Tab_active");
+        $(obj).addClass("Tab_active");
+        $(".xxtab").addClass("none");
+        $("#myTab1_Content"+n).removeClass("none")
+    }
+    $(function(){
+        /*revealOnScroll();*/
+        srcoll_height();
+        function onStyleChange(){
+            var pic=$('#focus_id1').attr('class');
+            var pic2=$('#focus_id2').attr('class');
+            var pic3=$('#focus_id3').attr('class');
+            console.log(pic);
+
+            if(pic.indexOf('swiper-slide-active')!=-1 || pic.indexOf('swiper-slide-duplicate-active')!=-1){
+                $('.swiper-slide-active #title1').addClass('animated fadeInDown');
+                $('.swiper-slide-active #title_der1').addClass('animated fadeInUp');
+            }else{
+                $('.swiper-slide #title1').removeClass('animated fadeInDown');
+                $('.swiper-slide #title_der1').removeClass('animated fadeInUp');
+            }
+            if(pic2.indexOf('swiper-slide-active')!=-1){
+                $('.swiper-slide-active #title2').addClass('animated fadeInDown');
+                $('.swiper-slide-active #title_der2').addClass('animated fadeInUp');
+            }else{
+                $('.swiper-slide #title2').removeClass('animated fadeInDown');
+                $('.swiper-slide #title_der2').removeClass('animated fadeInUp');
+            }
+            if(pic3.indexOf('swiper-slide-active')!=-1 || pic3.indexOf('swiper-slide-duplicate-active')!=-1){
+                $('.swiper-slide-active #title3').addClass('animated fadeInDown');
+                $('.swiper-slide-active #title_der3').addClass('animated fadeInUp');
+            }else{
+                $('.swiper-slide #title3').removeClass('animated fadeInDown');
+                $('.swiper-slide #title_der3').removeClass('animated fadeInUp');
+            }
+
+        }
+        if(window.MutationObserver) {
+            var observer = new MutationObserver(function (mrs) {
+                if (mrs[0].attributeName == 'class')
+                    onStyleChange();
+            });
+            observer.observe(document.getElementById('focus_id1'), {
+                'attributes': true
+            });
+            observer.observe(document.getElementById('focus_id2'), {
+                'attributes': true
+            });
+            observer.observe(document.getElementById('focus_id3'), {
+                'attributes': true
+            });
+        }
+    })
+</script>
+</html>

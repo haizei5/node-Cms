@@ -1,0 +1,184 @@
+{{include 'admin/public/header.html'}}
+
+<body>
+{{include 'admin/public/header_nav.html'}}
+
+<div class="main-container" id="main-container">
+    <script type="text/javascript">
+        try{ace.settings.check('main-container' , 'fixed')}catch(e){}
+    </script>
+
+    <div class="main-container-inner">
+        <a class="menu-toggler" id="menu-toggler" href="#">
+            <span class="menu-text"></span>
+        </a>
+
+        {{include 'admin/public/nav_left.html'}}
+
+        <div class="main-content">
+            {{include 'admin/public/nav_top.html'}}
+
+            <div class="page-content">
+
+                <div class="page-header">
+                    <h1>
+                        添加管理员
+                    </h1>
+                </div><!-- /.page-header -->
+                    <!--<form action="{{_host}}/admin/manage/doedit" method="post" class="form-horizontal" role="form">
+                        <input type="hidden" name="last_time" value="">
+                        <input type="hidden" name="status" value="">
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label no-padding-right" for="username">用户名:</label>
+
+                            <div class="col-sm-10">
+                                <input type="hidden" name="id"  value="{{@list._id}}"/>
+                                <input type="text" id="username"  name="username" class="col-xs-10 col-sm-5" value="{{list.username}}" disabled="disabled"/>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label no-padding-right" for="email">电子邮箱:</label>
+
+                            <div class="col-sm-10">
+                                <input type="text" id="email"  name="email" class="col-xs-10 col-sm-5" value="{{list.email}}"/>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label no-padding-right" for="phone">手机号码:</label>
+
+                            <div class="col-sm-10">
+                                <input type="text" id="phone"  name="phone" class="col-xs-10 col-sm-5"  value="{{list.phone}}"/>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label no-padding-right" for="password">密 码:</label>
+
+                            <div class="col-sm-10">
+                                <input type="password" id="password"  name="password" class="col-xs-10 col-sm-5" />
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label no-padding-right" for="rpassword">确认密码:</label>
+
+                            <div class="col-sm-10">
+                                <input type="password" id="rpassword"  name="rpassword" class="col-xs-10 col-sm-5" />
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label no-padding-right" for="rpassword"></label>
+
+                            <div class="col-sm-10">
+                                <button id="submit" type="button" class="btn btn-primary">提交</button>
+                            </div>
+
+                        </div>
+
+
+
+
+
+                    </form>-->
+
+                <div class="container_type" >
+                    <div class="table-responsive">
+                        <form id="myForm_user" action="{{_host}}/admin/manager/doedit" method="post" class="form-horizontal form_top" role="form" enctype="multipart/form-data">
+                            <input type="hidden" name="last_time" value="">
+                            <input type="hidden" name="status" value="{{list.status}}">
+                            <input type="hidden" name="id" value="{{@list._id}}">
+                            <input type="hidden" name="img_name" value="{{list.img_name}}">
+                            <input type="hidden" name="prevPage" value="{{prevPage}}"/>
+                            <div class="form-group">
+                                <label class="col-sm-2 col-sm-push-2 control-label no-padding-right" for="username">用户名:</label>
+
+                                <div class="col-sm-10 col-sm-push-2">
+                                    <input type="text" id="username"  name="username" class="col-xs-10 col-sm-5" value="{{list.username}}"/>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-2 col-sm-push-2 control-label no-padding-right">上传头像:</label>
+
+                                <div class="col-sm-10 col-sm-push-2">
+                                    <a href="javascript:void(0);" class="file">选择文件
+                                        <input type="file" id="file"  name="user_img_url" class="col-xs-10 col-sm-5" />
+                                    </a>
+                                    <label class="no-padding-right showFileName" title="">{{list.img_name}}</label>
+                                    <label class="no-padding-right showerror" title="" style="display: none"></label>
+                                </div>
+                            </div>
+                            <div class="img-form-group">
+                                <label class="col-sm-2 col-sm-push-2 control-label no-padding-right">头像:</label>
+
+                                <div class="col-sm-10 col-sm-push-2">
+                                    <img src="{{_host}}{{list.user_img}}" class="imgSize">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-2 col-sm-push-2 control-label no-padding-right" for="email">电子邮箱:</label>
+
+                                <div class="col-sm-10 col-sm-push-2">
+                                    <input type="text" id="email"  name="email" class="col-xs-10 col-sm-5" value="{{list.email}}"/>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-2 col-sm-push-2 control-label no-padding-right" for="phone" >手机号码:</label>
+
+                                <div class="col-sm-10 col-sm-push-2 ">
+                                    <input type="text" id="phone"  name="phone" class="col-xs-10 col-sm-5" value="{{list.phone}}"/>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="col-sm-2 col-sm-push-2 control-label no-padding-right" for="password">密 码:</label>
+
+                                <div class="col-sm-10 col-sm-push-2 ">
+                                    <input type="password" id="password"  name="password" class="col-xs-10 col-sm-5" />
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-2 col-sm-push-2 control-label no-padding-right" for="rpassword">确认密码:</label>
+
+                                <div class="col-sm-10 col-sm-push-2">
+                                    <input type="password" id="rpassword"  name="rpassword" class="col-xs-10 col-sm-5" />
+                                </div>
+                            </div>
+                            <div class="form-group">
+
+                                <div class="col-sm-12" style="text-align: center">
+                                    <input type="submit" name="submit" id="submit" class="submit" value="提交信息">
+                                </div>
+
+                            </div>
+
+
+
+
+
+                        </form>
+
+                    </div>
+                </div>
+
+            </div>
+        </div><!-- /.main-content -->
+
+    </div><!-- /.main-container-inner -->
+
+    <a href="#" id="btn-scroll-up" class="btn-scroll-up btn btn-sm btn-inverse">
+        <i class="icon-double-angle-up icon-only bigger-110"></i>
+    </a>
+</div><!-- /.main-container -->
+
+
+<!--引入底部页面-->
+{{include 'admin/public/footer.html'}}
+<script src="{{_host}}/admin/collection_js/method_public.js"></script>
+
+</body>
+<script>
+    $(function(){
+
+    })
+</script>
+</html>
+

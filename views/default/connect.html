@@ -1,0 +1,77 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>联系我们</title>
+    {{include 'default/public/link'}}
+<link rel="stylesheet" type="text/css" href="default/css/about.css" />
+
+</head>
+
+<body>
+{{include  'default/public/header'}}
+<div id="header_nav-wrapper" class="text-center">
+    <img class="header_nav_img" src="/default/images/header_nav-menu/connect_bg.jpg">
+    <div class="header_nav_new">
+        <div class="animated fadeInDown" data-animation="fadeInDown">We've been waiting for you here</div>
+        <h3 class="animated fadeInUp" data-animation="fadeInUp"><span>我们一直在这里等你</span></h3>
+    </div>
+
+
+
+</div>
+
+<div id="main-wrapper_connect">
+    <div class="main_connect">
+        <span class=" revealOnScroll title font-align" data-animation="fadeInDown">联系我们</span>
+        <ul>
+            <li class="revealOnScroll" data-animation="fadeInLeft" data-timeout="300">
+                <div class="fl connect_list text-center">
+                    <span class="name">公司地址</span>
+                    <br>
+                    <p> 武汉市洪山区光谷时代广场A座1502/1503室</p>
+                </div>
+                <div class="fl connect_list text-center connect_bg02">
+                    <span class="name">热线电话</span>
+                    <br>
+                    <p> 027-87742291</p>
+                </div>
+                <div class="fl connect_list text-center connect_bg03">
+                    <span class="name">电子邮箱</span>
+                    <br>
+                    <p> 2727918338@qq.com</p>
+                </div>
+                <div class="fl connect_list text-center connect_bg04">
+                    <span class="name">公司地址</span>
+                    <br>
+                    <p> 武汉市洪山区光谷时代广场A座1502/1503室</p>
+                </div>
+            </li>
+            <li class="address revealOnScroll" data-animation="fadeInLeft" data-timeout="500">
+                <div id="allmap"></div>
+            </li>
+        </ul>
+
+    </div>
+</div>
+
+{{include  'default/public/footer'}}
+        
+
+
+</body>
+<script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=fHrNQj6DHTjZtfTvfqbsuvTzKc5V9SBl"></script>
+<script>
+    // 百度地图API功能
+    var map = new BMap.Map("allmap");
+    map.centerAndZoom(new BMap.Point(116.404, 39.915), 11);
+    var local = new BMap.LocalSearch(map, {
+        renderOptions:{map: map}
+    });
+    local.search("金沟河路");
+    $(function(){
+        revealOnScroll();
+        srcoll_height();
+    })
+</script>
+</html>

@@ -1,0 +1,80 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>关于我们</title>
+{{include 'default/public/link'}}
+<link rel="stylesheet" type="text/css" href="default/css/about.css" />
+</head>
+
+<body>
+{{include  'default/public/header'}}
+<div id="header_nav-wrapper" class="text-center">
+    <img class="header_nav_img" src="/default/images/header_nav-menu/about_bg.jpg">
+    <div class="header_nav_new">
+        <div class="animated fadeInDown" data-animation="fadeInDown">We are a professional information solutions provider</div>
+        <h3 class="animated fadeInUp" data-animation="fadeInUp"><span>我们是专业信息化解决方案提供商</span></h3>
+    </div>
+
+
+
+</div>
+
+<div class="about_tab revealOnScroll" data-animation="fadeInDown">
+    <div class="wrapper text-center">
+        <div class >
+            <div class="list fl">公司简介</div>
+        </div>
+    </div>
+</div>
+
+<div id="main-wrapper" class="revealOnScroll" data-animation="fadeInUp">
+    <div class="main_top">
+       {{@res.content}}
+    </div>
+   <!-- <div class="main_center">
+        <dl class="clear">
+        <dt>企业使命 Enterprise Mission</dt>
+        <dd><a href="#"><img src="default/images/about/main_center-image1.jpg" /><p>创作独一无二的设计</p></a></dd>
+        <dd><a href="#"><img src="default/images/about/main_center-image2.jpg" /><p>创作独一无二的设计</p></a></dd>
+        <dd style="margin-right:0;"><a href="#"><img src="default/images/about/main_center-image3.jpg" /><p>创作独一无二的设计</p></a></dd>
+        
+        
+        
+        </dl>
+
+    </div>
+    <div class=" main_bottom">
+        <ul class="clear">
+            <h2>我们的办公环境 Our Office Environment</h2> 
+            <li><a href="#" ><img src="default/images/about/main_bottom-image1.jpg" alt="&nbsp;" /></a></li>
+            <li><a href="#"><img src="default/images/about/main_bottom-image2.jpg" alt="&nbsp;" /></a></li>
+            <li><a href="#" style=" margin-right:0;"><img src="default/images/about/main_bottom-image3.jpg" alt="&nbsp;" /></a></li>
+            <li><a href="#"><img src="default/images/about/main_bottom-image4.jpg" alt="&nbsp;"  /></a></li>
+            <li><a href="#"><img src="default/images/about/main_bottom-image5.jpg" alt="&nbsp;" /></a></li>
+            <li><a href="#" style=" margin-right:0;"><img src="default/images/about/main_bottom-image6.jpg" alt="&nbsp;" /></a></li>
+            <li><a href="#" style=" margin-bottom:0;"><img src="default/images/about/main_bottom-image7.jpg" alt="&nbsp;" /></a></li>
+            <li><a href="#" style=" margin-bottom:0;"><img src="default/images/about/main_bottom-image8.jpg" alt="&nbsp;" /></a></li>
+            <li><a href="#" style=" margin-right:0; margin-bottom:0;"><img src="default/images/about/main_bottom-image9.jpg" alt="&nbsp;" /></a></li>
+        
+        
+        </ul>
+        
+    
+    </div>-->
+    
+    
+    
+    
+    
+    
+</div>
+{{include  'default/public/footer'}}
+</body>
+<script>
+    $(function(){
+        revealOnScroll();
+        srcoll_height();
+    })
+</script>
+</html>
